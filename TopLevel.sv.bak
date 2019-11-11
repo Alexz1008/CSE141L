@@ -50,7 +50,7 @@ logic       SC_IN;         // carry register (loop with ALU)
 	.branch_en		 // to PC
   );
 // instruction ROM
-  InstROM #(.W(9)) instr_ROM1(
+  InstROM instr_ROM1(
 	.InstAddress   (PC), 
 	.InstOut       (Instruction)
 	);
@@ -63,7 +63,7 @@ logic       SC_IN;         // carry register (loop with ALU)
 		.write_en  (reg_wr_en)    , 
 		.raddrA    ({1'b0,Instruction[5:3]}),         //concatenate with 0 to give us 4 bits
 		.raddrB    ({1'b0,Instruction[2:0]}), 
-		.waddr     ({1'b0,Instruction[5:3]+3'b1}), 	  // mux above
+		.waddr     ({1'b0,Instruction[5:3]+1}), 	  // mux above
 		.data_in   (regWriteValue) , 
 		.data_outA (ReadA        ) , 
 		.data_outB (ReadB		 )

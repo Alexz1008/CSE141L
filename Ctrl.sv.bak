@@ -11,11 +11,11 @@ module Ctrl (
                branch_en
   );
 // jump on right shift that generates a zero
-//always_comb
-//  if((Instruction[2:0] ==  kRSH) && ZERO)
-//    jump_en = 1;
-//  else
-//    jump_en = 0;
+always_comb
+  if((Instruction[2:0] ==  kRSH) && ZERO)
+    jump_en = 1;
+  else
+    jump_en = 0;
 
 // branch every time ALU result LSB = 0 (even)
 assign branch_en = BEVEN;
