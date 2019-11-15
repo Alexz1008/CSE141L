@@ -1,11 +1,4 @@
-{F:/CSE 141L/CSE141L/definitions.sv} {1 {vlog -work work -sv -stats=none {F:/CSE 141L/CSE141L/definitions.sv}
-Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
--- Compiling package definitions
-
-Top level modules:
-	--none--
-
-} {} {}} {F:/CSE 141L/CSE141L/inst_rom2.sv} {1 {vlog -work work -sv -stats=none {F:/CSE 141L/CSE141L/inst_rom2.sv}
+{F:/CSE 141L/CSE141L/inst_rom2.sv} {1 {vlog -work work -sv -stats=none {F:/CSE 141L/CSE141L/inst_rom2.sv}
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
 -- Compiling module InstROM
 
@@ -34,6 +27,13 @@ Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 
 
 Top level modules:
 	PC
+
+} {} {}} {F:/CSE 141L/CSE141L/InstROM.sv} {1 {vlog -work work -sv -stats=none {F:/CSE 141L/CSE141L/InstROM.sv}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module InstROM
+
+Top level modules:
+	InstROM
 
 } {} {}} {F:/CSE 141L/CSE141L/LUT.sv} {1 {vlog -work work -sv -stats=none {F:/CSE 141L/CSE141L/LUT.sv}
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
