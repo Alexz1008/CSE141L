@@ -3,7 +3,7 @@
 // Module Name:    TopLevel
 // CSE141L
 // partial only
-
+import definitions::*;  // includes package "definitions"
 module TopLevel(		   // you will have the same 3 ports
 	input     start,	   // init/reset, active high
 	input     CLK,		   // clock -- posedge used inside design
@@ -56,15 +56,17 @@ logic       SC_IN;         // carry register (loop with ALU)
 	.InstOut       (Instruction)
 	);
 
-  assign load_inst = Instruction[8:6]==3'b110;  // calls out load specially
-
+  assign load_inst = Instruction == {4'b0001,Instruction[4:1],1'b0};  // calls out load specially
+  assign reg_wr_en = !((Instruction[8:5] == kBRC) || ((Instruction[8:5] == kLDS) && (Instruction[0] == 0)));
 // reg file
 	reg_file #(.W(8),.D(4)) reg_file1 (
 		.CLK    	  ,
 		.write_en  (reg_wr_en),
-		.raddrA    ({Instruction[4:1]}),         //concatenate with 0 to give us 4 bits
-		//.raddrB    ({1'b0,Instruction[2:0]}),
-		.waddr     ({1'b0,Instruction[5:3]+3'b1}), 	  // mux above
+		.T         (Instruction[0]),
+		.raddrA    (Instruction[4:1]),         // concatenate with 0 to give us 4 bits
+		.raddrB    (4'b0000),                  // accumulator address r0
+		.OP        (Instruction[8:5]),
+		//.waddr     ({4'b0000}), 	            // mux above
 		.data_in   (regWriteValue),
 		.data_outA (ReadA),
 		.data_outB (ReadB)
@@ -75,12 +77,15 @@ logic       SC_IN;         // carry register (loop with ALU)
 
 	assign InA = ReadA;						          // connect RF out to ALU in
 	assign InB = ReadB;
-	assign MEM_WRITE = (Instruction == 9'h111);       // mem_store command
+	assign MEM_WRITE = (Instruction == {4'b0001,Instruction[4:1],1'b1});       // mem_store command
 	assign regWriteValue = load_inst? Mem_Out : ALU_out;  // 2:1 switch into reg_file
     ALU ALU1  (
 	  .INPUTA  (InA),
-	  .INPUTB  (InB), 
-	  .OP      (Instruction[8:6]),
+	  .INPUTB  (InB),
+	  .II      ({3'b000,Instruction[4:0]}),
+	  .IX      ({4'b0000,Instruction[4:1]}),
+	  .OP      (Instruction[8:5]),
+	  .T       (Instruction[0]),
 	  .OUT     (ALU_out),//regWriteValue),
 	  .SC_IN   ,//(SC_IN),
 	  .SC_OUT  ,
@@ -89,11 +94,11 @@ logic       SC_IN;         // carry register (loop with ALU)
 	  );
   
 	data_mem data_mem1(
-		.DataAddress  (ReadA)    , 
+		.DataAddress  (ReadA),
 		.ReadMem      (1'b1),          //(MEM_READ) ,   always enabled
 		.WriteMem     (MEM_WRITE), 
-		.DataIn       (memWriteValue), 
-		.DataOut      (Mem_Out)  , 
+		.DataIn       (memWriteValue),
+		.DataOut      (Mem_Out),
 		.CLK 		  		     ,
 		.reset		  (start)
 	);
@@ -106,9 +111,9 @@ always_ff @(posedge CLK)
   	cycle_ct <= cycle_ct+16'b1;
 
 always_ff @(posedge CLK)    // carry/shift in/out register
-  if(sc_clr)				// tie sc_clr low if this function not needed
+  if (sc_clr)				// tie sc_clr low if this function not needed
     SC_IN <= 0;             // clear/reset the carry (optional)
-  else if(sc_en)			// tie sc_en high if carry always updates on every clock cycle (no holdovers)
+  else if (sc_en)			// tie sc_en high if carry always updates on every clock cycle (no holdovers)
     SC_IN <= SC_OUT;        // update the carry  
 
 endmodule

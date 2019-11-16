@@ -6,7 +6,7 @@ import definitions::*;
 module Ctrl (
   input[ 8:0] Instruction,	   // machine code
   input       ZERO,			   // ALU out[7:0] = 0
-              BEVEN,		   // ALU out[0]   = 0
+              BEVEN,		      // ALU out[0]   = 0
   output logic jump_en,
                branch_en
   );
