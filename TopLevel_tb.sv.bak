@@ -18,7 +18,7 @@ module TopLevel_tb;	     // Lab 17
   TopLevel DUT (
 	.start           , 
 	.CLK             , 
-	.halt
+	.halt             
 	);
 
 initial begin

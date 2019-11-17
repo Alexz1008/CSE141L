@@ -25,8 +25,8 @@ always_comb data_outB = registers[raddrB];                // can read from addr 
 
 // sequential (clocked) writes 
 always_ff @ (posedge CLK)
-  if (write_en && ((OP == kGST && T) || (OP == kLRS))) // If reg write is enabled AND the operation
-    registers[raddrA] <= data_in;                      // is Get/Set with toggle bit set to 1 OR the
-  else if (write_en)											    // operation is L/RShift, write to rs.
-    registers[raddrB] <= data_in;                      // otherwise, write to r0.
+  if (write_en && ((OP == kGST && T) || (OP == kLRS) || (OP == kLDS))) // If reg write is enabled AND the operation
+    registers[raddrA] <= data_in;                                      // is Get/Set with toggle bit set to 1, the
+  else if (write_en)											                    // operation is L/RShift, OR, op is Load/Store write to rs.
+    registers[raddrB] <= data_in;                                      // otherwise, write to r0.
 endmodule

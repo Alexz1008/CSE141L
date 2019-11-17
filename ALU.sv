@@ -5,37 +5,47 @@ import definitions::*;  // includes package "definitions"
 module ALU(
   input [7:0]  INPUTA,        // data inputs
                INPUTB,
-					II,
-					IX,
+  input [4:0]	ImmI,
+  input [4:1]	ImmX,
   input [3:0]  OP,            // ALU opcode, part of microcode
   input        T,             // Toggle bit used to toggle our instruction functionality
-  input        SC_IN,         // shift in/carry in 
+  //input        SC_IN,         // shift in/carry in 
   output logic [7:0] OUT,     // or:  output reg [7:0] OUT,
-  output logic SC_OUT,        // shift out/carry out
+  //output logic SC_OUT,        // shift out/carry out
   output logic ZERO,          // zero out flag
-  output logic BEVEN          // LSB of input B = 0
+  output logic [3:0] bOFFSET, // Signed branch offset produced by branch op
+  output logic bSIGN
   );
 
   op_mne op_mnemonic;  // type enum: used for convenient waveform viewing
 
   always_comb begin
-    {SC_OUT, OUT} = 0;            // default -- clear carry out and result out
+    //{SC_OUT, OUT} = 0;            // default -- clear carry out and result out
     
     // single instruction for both LSW & MSW
     case(OP)
-      kADD : {SC_OUT, OUT} = {1'b0,INPUTA} + INPUTB + SC_IN;  // add w/ carry-in & out
+      kADD : OUT = INPUTA + INPUTB + T; // + SC_IN;  // add w/ carry-in & out
 
       kXOR : begin // XOR rs with r0
                OUT    = INPUTA^INPUTB; // exclusive OR
-               SC_OUT = 0;             // clear carry out -- possible convenience
+               // SC_OUT = 0;             // clear carry out -- possible convenience
              end
-
+				 
+		kBRC : begin
+		         if (INPUTB == 8'h00) begin
+					  bOFFSET = ImmI[3:0];
+					  bSIGN   = ImmI[4];
+					end else begin
+					  bOFFSET = 3'b001;
+					  bSIGN   = 0;
+					end
+		       end
       kGST : begin // Get/Set registers
 				   if (T)           // if toggle bit is 1,
 					  OUT  = INPUTB; // set OUT to value at r0
 					else             // otherwise,
 					  OUT  = INPUTA; // set OUT to value at rs
-					SC_OUT = 0;      // ?? not sure about this line ??
+					// SC_OUT = 0;      // ?? not sure about this line ??
              end
 
       kLSB : begin // Set r0's LSB to whatever was the LSB/MSB of rs
@@ -43,7 +53,7 @@ module ALU(
 					  OUT  = ((INPUTA&8'h80) >> 7) | INPUTB; // set the LSB in r0 to the MSB of rs
 					else                                     // otherwise,
 					  OUT  = (INPUTA&8'h01) | INPUTB;        // set the LSB in r0 to the LSB of rs
-					SC_OUT = 0;      // ?? not sure about this line ??
+					// SC_OUT = 0;      // ?? not sure about this line ??
              end
 
 		kMSB : begin // Set r0's MSB to whatever was the LSB/MSB of rs
@@ -51,21 +61,19 @@ module ALU(
 					  OUT  = (INPUTA&8'h80) | INPUTB;        // set the MSB in r0 to the MSB of rs
 					else                                     // otherwise,
 					  OUT  = ((INPUTA&8'h01) << 7) | INPUTB; // set the MSB in r0 to the LSB of rs
-					SC_OUT = 0;      // ?? not sure about this line ??
+					// SC_OUT = 0;      // ?? not sure about this line ??
 		       end
 
 		kLRS : begin // Shift rs left/right by one bit depending on the toggle bit
 		         if (T)
-					  {OUT, SC_OUT} = {SC_IN, INPUTA}; // Don't understand, copied from starter code
-					  // OUT  = INPUTA >> 1;
+					  OUT  = INPUTA >> 1;
 					else
-					  {OUT, SC_OUT} = {INPUTA, SC_IN}; // Don't understand, copied from starter code
-					  // OUT  = INPUTA << 1;
+					  OUT  = INPUTA << 1;
 		       end
 
-		kACC : begin // Set accumulator(r0) to II(immediate in I instruction format)
-		         OUT = II;
-					SC_OUT = 0;      // ?? not sure about this line ??
+		kACC : begin // Set accumulator(r0) to ImmI(immediate in I instruction format)
+		         OUT = ImmI;
+					// SC_OUT = 0;      // ?? not sure about this line ??
 		       end
 
 		kENQ : begin // Checks if r0 ==/!= rs depending on the toggle bit
@@ -80,24 +88,24 @@ module ALU(
 					  else
 					    OUT = 8'h00;
 					end
-					SC_OUT = 0;      // ?? not sure about this line ??
+					// SC_OUT = 0;      // ?? not sure about this line ??
 		       end
 
-		kEQI : begin // Checks if r0 ==/!= II depending on the toggle bit
+		kEQI : begin // Checks if r0 ==/!= ImmX depending on the toggle bit
 		         if (T) begin
-					  if (INPUTB != II)
+					  if (INPUTB != ImmX)
 					    OUT = 8'h01;
 					  else
 					    OUT = 8'h00;
 					end else begin
-					  if (INPUTB == II)
+					  if (INPUTB == ImmX)
 					    OUT = 8'h01;
 					  else
 					    OUT = 8'h00;
 					end
-					SC_OUT = 0;      // ?? not sure about this line ??
+					//SC_OUT = 0;      // ?? not sure about this line ??
 		       end
-      default: {SC_OUT,OUT} = 0;       // no-op, zero out
+      default: OUT = 0;       // no-op, zero out
     endcase
     case(OUT)
       'b0     : ZERO = 1'b1;
@@ -106,7 +114,4 @@ module ALU(
     //$display("ALU Out %d \n",OUT);
     op_mnemonic = op_mne'(OP);  // displays operation name in waveform viewer
   end
-  always_comb BEVEN = OUT[0];            // note [0] -- look at LSB only
-  //    OP == 3'b101; //!INPUTB[0];               
-  // always_combbranch_enable = opcode[8:6]==3'b101? 1 : 0;  
 endmodule

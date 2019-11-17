@@ -6,19 +6,15 @@ import definitions::*;
 module Ctrl (
   input[ 8:0] Instruction,	   // machine code
   input       ZERO,			   // ALU out[7:0] = 0
-              BEVEN,		      // ALU out[0]   = 0
-  output logic jump_en,
-               branch_en
+  output logic branch_en
   );
-// jump on right shift that generates a zero
-//always_comb
-//  if((Instruction[2:0] ==  kRSH) && ZERO)
-//    jump_en = 1;
-//  else
-//    jump_en = 0;
-
-// branch every time ALU result LSB = 0 (even)
-assign branch_en = BEVEN;
+  
+// Enable branching if the Instruction operation is a branch.
+always_comb
+  if(Instruction[8:5] == kBRC)
+    branch_en = 1;
+  else
+    branch_en = 0;
 
 endmodule
 
