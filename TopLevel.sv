@@ -62,6 +62,7 @@ logic[15:0] cycle_ct;	   // standalone; NOT PC!
 		.CLK    	  ,
 		.write_en  (reg_wr_en),
 		.T         (Instruction[0]),
+		.reset     (start),
 		.raddrA    (Instruction[4:1]),         // concatenate with 0 to give us 4 bits
 		.raddrB    (4'b0000),                  // accumulator address r0
 		.OP        (Instruction[8:5]),
@@ -87,9 +88,11 @@ logic[15:0] cycle_ct;	   // standalone; NOT PC!
 	  .OP      (Instruction[8:5]),
 	  .T       (Instruction[0]),
 	  .OUT     (ALU_out),//regWriteValue),
-	  .ZERO ,
+	  .ZERO,
 	  .bOFFSET,
-	  .bSIGN
+	  .bSIGN,
+	  .reset   (start),
+	  .halt
 	  );
 	  
   assign memWriteValue = ReadA;

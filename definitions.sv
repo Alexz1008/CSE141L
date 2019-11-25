@@ -14,6 +14,7 @@ package definitions;
 	 const logic [3:0]kACC  = 4'b1000; // Set Accumulator
 	 const logic [3:0]kENQ  = 4'b1001; // Equals/Not Equals
 	 const logic [3:0]kEQI  = 4'b1010; // Equals/Not Equals Immediate
+	 const logic [3:0]kRST  = 4'b1111; // Reset
 	 
 // enum names will appear in timing diagram
     typedef enum logic[3:0] {

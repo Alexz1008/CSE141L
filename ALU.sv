@@ -14,14 +14,16 @@ module ALU(
   //output logic SC_OUT,        // shift out/carry out
   output logic ZERO,          // zero out flag
   output logic [3:0] bOFFSET, // Signed branch offset produced by branch op
-  output logic bSIGN
+  output logic bSIGN,
+  output logic reset,
+  output logic halt
   );
 
   op_mne op_mnemonic;  // type enum: used for convenient waveform viewing
 
   always_comb begin
     //{SC_OUT, OUT} = 0;            // default -- clear carry out and result out
-    
+    {reset, halt} = 0;
     // single instruction for both LSW & MSW
     case(OP)
       kADD : OUT = INPUTA + INPUTB + T; // + SC_IN;  // add w/ carry-in & out
@@ -104,6 +106,11 @@ module ALU(
 					    OUT = 8'h00;
 					end
 					//SC_OUT = 0;      // ?? not sure about this line ??
+		       end
+				 
+		kRST : begin
+		         reset = 1;
+					halt = T;
 		       end
       default: OUT = 0;       // no-op, zero out
     endcase
