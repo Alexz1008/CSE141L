@@ -1,4 +1,29 @@
-100000100
-010000011
-000100011
-000100100
+100000100 // Loads 4 into r0
+010000011 // Sets r1 = r0
+000100011 // Stores r1 into mem[4] (mem[4] = 4)
+000100100 // Loads mem[4] into r2
+000000001 // r0 = 9
+010000010 // Sets r0 = r1 (4)
+000100000 // Loads mem[4] into r0 (4)
+100000000 // r0 = 0
+001100010 // Skip the next instruction
+000000000 // Should be skipped
+100000001 // r0 = 1
+001100010 // Shouldn't do anything
+100000100 // r0 = 4
+001000010 // 4 xor 4 = 0
+100000100 // r0 = 4
+011100000 // LShift, r0 = 8
+011100001 // RShift 3x, r0 = 4
+011100001 // RShift 3x, r0 = 2
+011100001 // RShift 3x, r0 = 1
+010000101 // Sets r2 = r0 (1)
+010100101 // Sets MSB of r0 = 1
+010000011 // Sets r1
+100100010 // Checks r0 == r1
+000000101 // r0 = r0 + r2 + 1
+100100010 // Checks r0 == r1
+010000010 // Gets r1
+011000101 // Sets MSB of r0 = 0
+010000100 // Gets r2
+101000001 // Checks if r0 == 2

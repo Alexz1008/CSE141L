@@ -20,8 +20,8 @@ module reg_file #(parameter W=8, D=4)(		 // W = data path width; D = pointer wid
 logic [W-1:0] registers[2**D];	  // or just registers[16] if we know D=4 always
 
 // combinational reads w/ blanking of address 0
-assign      data_outA = raddrA? registers[raddrA] : '0;	 // can't read from addr 0, just like MIPS
-always_comb data_outB = registers[raddrB];                // can read from addr 0, just like ARM
+assign      data_outA = registers[raddrA];	              // can read from addr 0, just like ARM
+always_comb data_outB = registers[raddrB];                //
 
 // sequential (clocked) writes 
 always_ff @ (posedge CLK)

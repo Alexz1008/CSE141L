@@ -48,19 +48,19 @@ module ALU(
 					// SC_OUT = 0;      // ?? not sure about this line ??
              end
 
-      kLSB : begin // Set r0's LSB to whatever was the LSB/MSB of rs
+      kLSB : begin // Set r0's LSB/MSB to whatever was the LSB of rs
                if (T)                                   // if toggle bit is 1,
-					  OUT  = ((INPUTA&8'h80) >> 7) | INPUTB; // set the LSB in r0 to the MSB of rs
+					  OUT  = {INPUTA[0], INPUTB[6:0]}; // set the LSB in r0 to the MSB of rs
 					else                                     // otherwise,
-					  OUT  = (INPUTA&8'h01) | INPUTB;        // set the LSB in r0 to the LSB of rs
+					  OUT  = {INPUTB[7:1], INPUTA[0]};        // set the MSB in r0 to the LSB of rs
 					// SC_OUT = 0;      // ?? not sure about this line ??
              end
 
-		kMSB : begin // Set r0's MSB to whatever was the LSB/MSB of rs
+		kMSB : begin // Set r0's LSB/MSB to whatever was the MSB of rs
 		         if (T)                                   // if toggle bit is 1,
-					  OUT  = (INPUTA&8'h80) | INPUTB;        // set the MSB in r0 to the MSB of rs
+					  OUT  = {INPUTA[7], INPUTB[6:0]};        // set the MSB in r0 to the MSB of rs
 					else                                     // otherwise,
-					  OUT  = ((INPUTA&8'h01) << 7) | INPUTB; // set the MSB in r0 to the LSB of rs
+					  OUT  = {INPUTB[7:1], INPUTA[7]}; // set the MSB in r0 to the LSB of rs
 					// SC_OUT = 0;      // ?? not sure about this line ??
 		       end
 
