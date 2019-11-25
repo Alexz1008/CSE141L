@@ -27,7 +27,8 @@ wire        MEM_READ,	   // data_memory read enable
 		      // SC_OUT,	      // to carry register
 			   ZERO,		      // ALU output = 0 flag
             branch_en,	   // to program counter: branch enable
-				bSIGN;         // to program counter: branch offset sign (-/+)
+				bSIGN,         // to program counter: branch offset sign (-/+)
+				reset;
 logic[15:0] cycle_ct;	   // standalone; NOT PC!
 // logic       SC_IN;         // carry register (loop with ALU)
 
@@ -62,7 +63,7 @@ logic[15:0] cycle_ct;	   // standalone; NOT PC!
 		.CLK    	  ,
 		.write_en  (reg_wr_en),
 		.T         (Instruction[0]),
-		.reset     (start),
+		.reset,
 		.raddrA    (Instruction[4:1]),         // concatenate with 0 to give us 4 bits
 		.raddrB    (4'b0000),                  // accumulator address r0
 		.OP        (Instruction[8:5]),
@@ -91,7 +92,7 @@ logic[15:0] cycle_ct;	   // standalone; NOT PC!
 	  .ZERO,
 	  .bOFFSET,
 	  .bSIGN,
-	  .reset   (start),
+	  .reset,
 	  .halt
 	  );
 	  

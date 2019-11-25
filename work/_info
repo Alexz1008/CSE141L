@@ -27,7 +27,7 @@ Z5 8F:/CSE 141L/CSE141L/ALU.sv
 Z6 FF:/CSE 141L/CSE141L/ALU.sv
 L0 5
 Z7 OP;L;10.4a;61
-Z8 !s108 1574653449.000000
+Z8 !s108 1574655652.000000
 Z9 !s107 F:/CSE 141L/CSE141L/ALU.sv|
 Z10 !s90 -reportprogress|300|-work|work|-sv|-stats=none|F:/CSE 141L/CSE141L/ALU.sv|
 !s101 -O0
@@ -112,7 +112,7 @@ R11
 n@ctrl_sv_unit
 vdata_mem
 R1
-Z17 !s110 1574653448
+Z17 !s110 1574655651
 !i10b 1
 !s100 Q@RHS8XTRS65XSkUWWI@U0
 I?mdni@d[MHNR[PUOlU<lA1
@@ -128,7 +128,7 @@ R7
 r1
 !s85 0
 31
-Z18 !s108 1574653448.000000
+Z18 !s108 1574655651.000000
 !s107 F:/CSE 141L/CSE141L/data_mem.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|F:/CSE 141L/CSE141L/data_mem.sv|
 !s101 -O0
@@ -315,17 +315,17 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 KDYUbRF:fGo;6efR=n7O31
-IdYgCcCYolo:6IX3kHnBo]0
+!s100 jF<7f@G?GT?Ycf6dIfISn1
+INh=Y37G1F=G7:Z8<Qf7>H2
 !s105 TopLevel_sv_unit
 S1
 R0
-Z29 w1574652867
+Z29 w1574655641
 Z30 8F:/CSE 141L/CSE141L/TopLevel.sv
 Z31 FF:/CSE 141L/CSE141L/TopLevel.sv
 L0 7
 R7
-R18
+R8
 Z32 !s107 F:/CSE 141L/CSE141L/TopLevel.sv|
 Z33 !s90 -reportprogress|300|-work|work|-sv|-stats=none|F:/CSE 141L/CSE141L/TopLevel.sv|
 !s101 -O0
@@ -350,7 +350,7 @@ R30
 R31
 L0 6
 R7
-R18
+R8
 R32
 R33
 !s101 -O0
