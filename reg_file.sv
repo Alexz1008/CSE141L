@@ -12,7 +12,6 @@ module reg_file #(parameter W=8, D=4)(		 // W = data path width; D = pointer wid
   input  [ D-1:0] raddrA,	// raddrA is always rs (Instruction[4:1]) as defined in TopLevel.sv
                   raddrB,	// raddrB is always r0 (the accumulator) as defined in TopLevel.sv
 						OP,      // opcode in instruction
-  reg    [3:0]    index,
   input  [ W-1:0] data_in,
   output [ W-1:0] data_outA,
   output logic [W-1:0] data_outB

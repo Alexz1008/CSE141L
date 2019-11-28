@@ -32,7 +32,7 @@ logic[  7:0] mat_str[32];      // message string parsed into bytes
 
 // your device goes here
 // explicitly list ports if your names differ from test bench's
-prog DUT(.*);	               // replace "proc" with the name of your top level module
+TopLevel DUT(.*);	               // replace "proc" with the name of your top level module
 
 initial begin
 // program 1
@@ -40,8 +40,8 @@ initial begin
     d1_in[i] = $random;        // create 15 messages
 // copy 15 original messages into first 30 bytes of memory 
 // rename "dm1" and/or "core" if you used different names for these
-    DUT.dm1.core[2*i+1]  = {5'b0,d1_in[i][11:9]};
-    DUT.dm1.core[2*i]    =       d1_in[i][ 8:1];
+    DUT.data_mem1.core[2*i+1]  = {5'b0,d1_in[i][11:9]};
+    DUT.data_mem1.core[2*i]    =       d1_in[i][ 8:1];
   end
   #10ns reset = 1'b0;
   #10ns req   = 1'b1;          // pulse request to DUT
@@ -58,8 +58,8 @@ initial begin
     p16 = ^d1_in[i]^p8^p4^p2^p1;  // overall parity (16th bit)
 // assemble output (data with parity embedded)
     $displayb ({d1_in[i][11:5],p8,d1_in[i][4:2],p4,d1_in[i][1],p2,p1,p16});
-    $writeb  (DUT.dm1.core[31+2*i]);
-    $displayb(DUT.dm1.core[30+2*i]);
+    $writeb  (DUT.data_mem1.core[31+2*i]);
+    $displayb(DUT.data_mem1.core[30+2*i]);
     $display();
   end
 
@@ -75,8 +75,8 @@ initial begin
     d2_good[i] = {d2_in[i][11:5],p8,d2_in[i][4:2],p4,d2_in[i][1],p2,p1,p16};
     flip[i] = $random;
     d2_bad[i] = d2_good[i] ^ (1'b1<<flip[i]);
-	DUT.dm1.core[65+2*i] = {d2_bad[i][15:8]};
-    DUT.dm1.core[64+2*i] = {d2_bad[i][ 7:0]};
+	DUT.data_mem1.core[65+2*i] = {d2_bad[i][15:8]};
+    DUT.data_mem1.core[64+2*i] = {d2_bad[i][ 7:0]};
   end
   #10ns req   = 1;
   #10ns req   = 0;
@@ -86,8 +86,8 @@ initial begin
   $display();
   for(int i=0; i<15; i++) begin
     $displayb({5'b0,d2_in[i]});
-    $writeb  (DUT.dm1.core[95+2*i]);
-    $displayb(DUT.dm1.core[94+2*i]);  
+    $writeb  (DUT.data_mem1.core[95+2*i]);
+    $displayb(DUT.data_mem1.core[94+2*i]);  
 	$display();
   end
 
@@ -95,11 +95,11 @@ initial begin
 // pattern we are looking for; experiment w/ various values
   pat = 5'b0000;//5'b10101;//$random;
   str2 = 0;
-  DUT.dm1.core[160] = pat;
+  DUT.data_mem1.core[160] = pat;
   for(int i=0; i<32; i++) begin
 // search field; experiment w/ various vales
     mat_str[i] = 8'b00000000;//8'b01010101;// $random;
-	DUT.dm1.core[128+i] = mat_str[i];   
+	DUT.data_mem1.core[128+i] = mat_str[i];   
 	str2 = (str2<<8)+mat_str[i];
   end
   ctb = 0;
@@ -124,9 +124,9 @@ initial begin
   $display();
   $display("start program 3");
   $display();
-  $display("number of patterns w/o byte crossing    = %d %d",ctb,DUT.dm1.core[192]);   //160 max
-  $display("number of bytes w/ at least one pattern = %d %d",cto,DUT.dm1.core[193]);   // 32 max
-  $display("number of patterns w/ byte crossing     = %d %d",cts,DUT.dm1.core[194]);   //253 max
+  $display("number of patterns w/o byte crossing    = %d %d",ctb,DUT.data_mem1.core[192]);   //160 max
+  $display("number of bytes w/ at least one pattern = %d %d",cto,DUT.data_mem1.core[193]);   // 32 max
+  $display("number of patterns w/ byte crossing     = %d %d",cts,DUT.data_mem1.core[194]);   //253 max
   #10ns $stop;
 end
 
