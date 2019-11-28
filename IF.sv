@@ -8,7 +8,7 @@ module IF(
 		  branch_en, 
 		  CLK,
 		  bSIGN,
-  input [3:0] bOFFSET,
+  input [7:0] bOFFSET,
   output logic halt,
   output logic[ 9:0] PC);
 

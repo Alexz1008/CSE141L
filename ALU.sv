@@ -13,7 +13,7 @@ module ALU(
   output logic [7:0] OUT,     // or:  output reg [7:0] OUT,
   //output logic SC_OUT,        // shift out/carry out
   output logic ZERO,          // zero out flag
-  output logic [3:0] bOFFSET, // Signed branch offset produced by branch op
+  output logic [7:0] bOFFSET, // Signed branch offset produced by branch op
   output logic bSIGN,
   output logic reset,
   output logic halt
@@ -108,6 +108,15 @@ module ALU(
 					//SC_OUT = 0;      // ?? not sure about this line ??
 		       end
 				 
+		kBRR : begin
+		         if (INPUTB == 8'h00) begin
+					  bOFFSET = INPUTA;
+					  bSIGN   = T;
+					end else begin
+					  bOFFSET = 8'h01;
+					  bSIGN   = 0;
+					end
+		       end
 		kRST : begin
 		         reset = 1;
 					halt = T;
