@@ -22,6 +22,7 @@ package definitions;
         ADD, LDS, XOR, BRC,
         GST, LSB, MSB, LRS,
 		  ACC, ENQ, EQI, BRR,
+      A, B, C,
 		  RST } op_mne;
 // note: kADD is of type logic[2:0] (3-bit binary)
 //   ADD is of type enum -- equiv., but watch casting

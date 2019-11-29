@@ -30,7 +30,7 @@ always_ff @ (posedge CLK) begin
     registers[raddrA] <= data_in;                                      // is Get/Set with toggle bit set to 1, the
   else if (write_en)											                    // operation is L/RShift, OR, op is Load/Store write to rs.
     registers[raddrB] <= data_in;                                      // otherwise, write to r0.
-  else if (reset) begin
+  if (reset) begin
     registers[0] <= 0;
 	 registers[1] <= 0;
 	 registers[2] <= 0;
