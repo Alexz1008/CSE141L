@@ -8,7 +8,7 @@ module IF(
 		  branch_en, 
 		  CLK,
 		  bSIGN,
-  input [3:0] bOFFSET,
+  input [7:0] bOFFSET,
   output logic halt,
   output logic[ 9:0] PC);
 
@@ -17,9 +17,7 @@ always @(posedge CLK)
     PC <= 0;
     halt <= 0;
   end else begin
-    if(PC>63)
-	   halt <= 1;		 // just a randomly chosen number 
-	 else if(branch_en) begin
+	 if(branch_en) begin
 	   if (bSIGN)
 	     PC <= PC - bOFFSET;
 		else
