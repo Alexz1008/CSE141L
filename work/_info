@@ -17,17 +17,17 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 Z;Wk8aV:WF<=;>>3j]JTN1
-I___OdSkT4T>PVnQm_dd`k2
+!s100 0hWnA3>cQZGn;idXJo5nb0
+I;MSiT[Z<jzk;3J^2RRjk@0
 !s105 ALU_sv_unit
 S1
 Z4 dC:/Users/alexz/git/CSE141L
-Z5 w1575047164
+Z5 w1575049156
 Z6 8C:/Users/alexz/git/CSE141L/ALU.sv
 Z7 FC:/Users/alexz/git/CSE141L/ALU.sv
 L0 5
 Z8 OP;L;10.4a;61
-Z9 !s108 1575048077.000000
+Z9 !s108 1575139661.000000
 Z10 !s107 C:/Users/alexz/git/CSE141L/ALU.sv|
 Z11 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/alexz/git/CSE141L/ALU.sv|
 !s101 -O0
@@ -112,7 +112,7 @@ R12
 n@ctrl_sv_unit
 vdata_mem
 R1
-Z18 !s110 1575048077
+Z18 !s110 1575139661
 !i10b 1
 !s100 Q@RHS8XTRS65XSkUWWI@U0
 I7<>oRoC:`UESj;3>ZzkO[1
@@ -159,15 +159,15 @@ R9
 R12
 vIF
 R1
-Z20 !s110 1575048078
+R18
 !i10b 1
-!s100 TcEn71P]R[OAHUbFT_WT@0
-IcFDl<9TkIa__5fFNc2cYN0
+!s100 j>kDl5a124`i?0WPHFJK`1
+I@?^mMXbYIOJ^R5_H35[fD0
 R3
-Z21 !s105 IF_sv_unit
+Z20 !s105 IF_sv_unit
 S1
 R4
-R13
+w1575048452
 8C:/Users/alexz/git/CSE141L/IF.sv
 FC:/Users/alexz/git/CSE141L/IF.sv
 L0 6
@@ -184,7 +184,7 @@ R12
 n@i@f
 vInstROM
 R1
-R20
+Z21 !s110 1575139662
 !i10b 1
 !s100 7gzB6z>c8<CM;:]E2::Ad3
 IVbUUX>?@B8SDVCZ<;Sz:H3
@@ -200,7 +200,7 @@ R8
 r1
 !s85 0
 31
-Z22 !s108 1575048078.000000
+Z22 !s108 1575139662.000000
 !s107 C:/Users/alexz/git/CSE141L/InstROM.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/alexz/git/CSE141L/InstROM.sv|
 !s101 -O0
@@ -209,7 +209,7 @@ R12
 n@inst@r@o@m
 vLUT
 R1
-R20
+R21
 !i10b 1
 !s100 LIodXU=6g1=o5`iV:?KFA0
 IT_1RV`3YMS:B5FRISdS443
@@ -239,7 +239,7 @@ R1
 !s100 ILVUAf@h<BcB3zN_Y>GNZ3
 I<[KegLE6nea_4<o=:dB^Z1
 R3
-R21
+R20
 S1
 R0
 w1572826017
@@ -259,7 +259,7 @@ R12
 n@p@c
 vprog123_tb
 R1
-R20
+R18
 !i10b 1
 !s100 mb@BIGiiE2nkTdO;RdWGN3
 IB=f0;:D1EJ2Cb16NhTgHP2
@@ -275,7 +275,7 @@ R8
 r1
 !s85 0
 31
-R22
+R9
 !s107 C:/Users/alexz/git/CSE141L/prog123_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/alexz/git/CSE141L/prog123_tb.sv|
 !s101 -O0
@@ -300,7 +300,7 @@ Z24 8C:/Users/alexz/git/CSE141L/reg_file.sv
 Z25 FC:/Users/alexz/git/CSE141L/reg_file.sv
 L0 7
 R8
-R22
+R9
 Z26 !s107 C:/Users/alexz/git/CSE141L/reg_file.sv|
 Z27 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/alexz/git/CSE141L/reg_file.sv|
 !s101 -O0
@@ -324,7 +324,7 @@ R24
 R25
 L0 6
 R8
-R22
+R9
 R26
 R27
 !s101 -O0
