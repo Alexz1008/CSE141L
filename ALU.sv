@@ -81,14 +81,14 @@ module ALU(
 		kENQ : begin // Checks if r0 ==/!= rs depending on the toggle bit
 		         if (T) begin
 					  if (INPUTB != INPUTA)
-					    OUT = 8'h01;
-					  else
 					    OUT = 8'h00;
+					  else
+					    OUT = 8'h01;
 					end else begin
 					  if (INPUTB == INPUTA)
-					    OUT = 8'h01;
-					  else
 					    OUT = 8'h00;
+					  else
+					    OUT = 8'h01;
 					end
 					// SC_OUT = 0;      // ?? not sure about this line ??
 		       end
