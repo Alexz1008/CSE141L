@@ -42,13 +42,13 @@ initial begin
 // rename "dm1" and/or "core" if you used different names for these
     DUT.data_mem1.core[2*i+1]  = {5'b0,d1_in[i][11:9]};
     DUT.data_mem1.core[2*i]    =       d1_in[i][ 8:1];
+    $writeb  (DUT.data_mem1.core[2*i+1]);
+    $displayb(DUT.data_mem1.core[2*i]);
+    $display();
   end
   #10ns reset = 1'b0;
   #10ns req   = 1'b1;          // pulse request to DUT
   #10ns req   = 1'b0;
-  $display("Waiting for halt");
-  #10ns 
-  $display(ack);
   wait(ack);                   // wait for ack from DUT
 // generate parity for each message; display result and that of DUT
   $display("start program 1");
@@ -60,6 +60,7 @@ initial begin
     p1 = d1_in[i][11]^d1_in[i][ 9]^d1_in[i][7]^d1_in[i][5]^d1_in[i][4]^d1_in[i][2]^d1_in[i][1];
     p16 = ^d1_in[i]^p8^p4^p2^p1;  // overall parity (16th bit)
 // assemble output (data with parity embedded)
+    $display("Mem[", i, "]");
     $displayb ({d1_in[i][11:5],p8,d1_in[i][4:2],p4,d1_in[i][1],p2,p1,p16});
     $writeb  (DUT.data_mem1.core[31+2*i]);
     $displayb(DUT.data_mem1.core[30+2*i]);

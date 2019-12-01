@@ -27,7 +27,7 @@ Z6 8C:/Users/Alex/git/CSE141L/ALU.sv
 Z7 FC:/Users/Alex/git/CSE141L/ALU.sv
 L0 5
 Z8 OP;L;10.4a;61
-Z9 !s108 1575236849.000000
+Z9 !s108 1575239878.000000
 Z10 !s107 C:/Users/Alex/git/CSE141L/ALU.sv|
 Z11 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Alex/git/CSE141L/ALU.sv|
 !s101 -O0
@@ -78,9 +78,9 @@ Z13 8C:/Users/Alex/git/CSE141L/Ctrl.sv
 Z14 FC:/Users/Alex/git/CSE141L/Ctrl.sv
 L0 6
 R8
-R9
-Z15 !s107 C:/Users/Alex/git/CSE141L/Ctrl.sv|
-Z16 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Alex/git/CSE141L/Ctrl.sv|
+Z15 !s108 1575239879.000000
+Z16 !s107 C:/Users/Alex/git/CSE141L/Ctrl.sv|
+Z17 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Alex/git/CSE141L/Ctrl.sv|
 !s101 -O0
 !i113 1
 R12
@@ -103,16 +103,16 @@ R13
 R14
 L0 2
 R8
-R9
 R15
 R16
+R17
 !s101 -O0
 !i113 1
 R12
 n@ctrl_sv_unit
 vdata_mem
 R1
-Z17 !s110 1575236850
+Z18 !s110 1575239879
 !i10b 1
 !s100 Q@RHS8XTRS65XSkUWWI@U0
 I7MBF^2j[^=SAz7;i@fef?2
@@ -128,7 +128,7 @@ R8
 r1
 !s85 0
 31
-Z18 !s108 1575236850.000000
+R15
 !s107 C:/Users/Alex/git/CSE141L/data_mem.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Alex/git/CSE141L/data_mem.sv|
 !s101 -O0
@@ -136,7 +136,7 @@ Z18 !s108 1575236850.000000
 R12
 Xdefinitions
 R1
-R17
+R18
 !i10b 1
 !s100 c`KI4@Ea6`_GnJz]JKnB41
 IbB6=?IZoJcQMmeh=J7_SE3
@@ -151,7 +151,7 @@ R8
 r1
 !s85 0
 31
-R18
+R15
 !s107 C:/Users/Alex/git/CSE141L/definitions.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Alex/git/CSE141L/definitions.sv|
 !s101 -O0
@@ -159,15 +159,15 @@ R18
 R12
 vIF
 R1
-R17
+R18
 !i10b 1
-!s100 MBn4i_Fc?d_GAARnhjG>l2
-Ia6[0Z^cEO_lKmY<lEkU]Q2
+!s100 N`[cXz3Wd@8ASj@KdX<fA0
+Ie1US:LLiX7>YK55=6DDj70
 R3
 Z19 !s105 IF_sv_unit
 S1
 R4
-w1575236822
+w1575239762
 8C:/Users/Alex/git/CSE141L/IF.sv
 FC:/Users/Alex/git/CSE141L/IF.sv
 L0 6
@@ -175,7 +175,7 @@ R8
 r1
 !s85 0
 31
-R18
+R15
 !s107 C:/Users/Alex/git/CSE141L/IF.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Alex/git/CSE141L/IF.sv|
 !s101 -O0
@@ -184,7 +184,7 @@ R12
 n@i@f
 vInstROM
 R1
-R17
+R18
 !i10b 1
 !s100 7gzB6z>c8<CM;:]E2::Ad3
 IlZn1O7;P2<A6?PR`CECXV2
@@ -200,7 +200,7 @@ R8
 r1
 !s85 0
 31
-R18
+R15
 !s107 C:/Users/Alex/git/CSE141L/InstROM.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Alex/git/CSE141L/InstROM.sv|
 !s101 -O0
@@ -259,15 +259,15 @@ R12
 n@p@c
 vprog123_tb
 R1
-R17
+R18
 !i10b 1
-!s100 oT@g]Q4fD[GOIJCKo6`_O2
-IG>b8^2b23nIOE6@]bD?A73
+!s100 1S2_HY5FAAi[=^B]X^Sb;1
+I=cz;nzdG@]Jn=H9<A<dF91
 R3
 !s105 prog123_tb_sv_unit
 S1
 R4
-w1575236525
+w1575239871
 8C:/Users/Alex/git/CSE141L/prog123_tb.sv
 FC:/Users/Alex/git/CSE141L/prog123_tb.sv
 L0 3
@@ -275,7 +275,7 @@ R8
 r1
 !s85 0
 31
-R18
+R15
 !s107 C:/Users/Alex/git/CSE141L/prog123_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Alex/git/CSE141L/prog123_tb.sv|
 !s101 -O0
@@ -300,7 +300,7 @@ Z21 8C:/Users/Alex/git/CSE141L/reg_file.sv
 Z22 FC:/Users/Alex/git/CSE141L/reg_file.sv
 L0 7
 R8
-R18
+R15
 Z23 !s107 C:/Users/Alex/git/CSE141L/reg_file.sv|
 Z24 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Alex/git/CSE141L/reg_file.sv|
 !s101 -O0
@@ -324,7 +324,7 @@ R21
 R22
 L0 6
 R8
-R18
+R15
 R23
 R24
 !s101 -O0
@@ -339,17 +339,17 @@ r1
 !s85 0
 31
 !i10b 1
-!s100 eZE^j=ZAUgb0K<h@XUaV:3
-IiR_>jJXmhM0[?^hL8:FUI2
+!s100 5?c^Pa<VAhlF`e?VG:[QR0
+IKPYGMOii]^mDf:eb2^VgB2
 !s105 TopLevel_sv_unit
 S1
 R4
-Z25 w1575236748
+Z25 w1575236904
 Z26 8C:/Users/Alex/git/CSE141L/TopLevel.sv
 Z27 FC:/Users/Alex/git/CSE141L/TopLevel.sv
 L0 7
 R8
-R18
+R15
 Z28 !s107 C:/Users/Alex/git/CSE141L/TopLevel.sv|
 Z29 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Alex/git/CSE141L/TopLevel.sv|
 !s101 -O0
@@ -374,7 +374,7 @@ R26
 R27
 L0 6
 R8
-R18
+R15
 R28
 R29
 !s101 -O0
@@ -383,7 +383,7 @@ R12
 n@top@level_sv_unit
 vTopLevel_tb
 R1
-R17
+R18
 !i10b 1
 !s100 zdNYz`ij:hnBL1N16RPEa2
 IXd2>M1H`Rh`Ab]=I>c]T=3
@@ -399,7 +399,7 @@ R8
 r1
 !s85 0
 31
-R18
+R15
 !s107 C:/Users/Alex/git/CSE141L/TopLevel_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Alex/git/CSE141L/TopLevel_tb.sv|
 !s101 -O0
