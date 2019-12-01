@@ -113,6 +113,15 @@ always_ff @(posedge CLK)
   	cycle_ct <= 0;
   else if(halt == 0)   // if(!halt)
   	cycle_ct <= cycle_ct+16'b1;
+    
+    
+initial begin
+  $display("test", halt);
+  #20ns 
+  $display("test", halt);
+  #20ns 
+  $display("test", halt);
+end
 
 //always_ff @(posedge CLK)    // carry/shift in/out register
 //  if (sc_clr)				// tie sc_clr low if this function not needed

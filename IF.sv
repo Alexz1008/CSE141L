@@ -8,14 +8,13 @@ module IF(
 		  branch_en, 
 		  CLK,
 		  bSIGN,
+      halt,
   input [7:0] bOFFSET,
-  output logic halt,
   output logic[ 9:0] PC);
 
 always @(posedge CLK)
   if(init) begin
     PC <= 0;
-    halt <= 0;
   end else begin
 	 if(branch_en) begin
 	   if (bSIGN)

@@ -46,6 +46,9 @@ initial begin
   #10ns reset = 1'b0;
   #10ns req   = 1'b1;          // pulse request to DUT
   #10ns req   = 1'b0;
+  $display("Waiting for halt");
+  #10ns 
+  $display(ack);
   wait(ack);                   // wait for ack from DUT
 // generate parity for each message; display result and that of DUT
   $display("start program 1");
