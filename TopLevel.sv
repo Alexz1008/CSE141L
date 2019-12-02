@@ -103,7 +103,7 @@ logic[15:0] cycle_ct;	   // standalone; NOT PC!
 		.WriteMem     (MEM_WRITE),
 		.DataIn       (memWriteValue),
 		.DataOut      (Mem_Out),
-		.CLK 		  		     ,
+		.CLK
 	);
 	
 // count number of instructions executed

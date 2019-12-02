@@ -5,7 +5,6 @@
 // CSE141L
 module data_mem(
   input              CLK,
-  input              reset,
   input [7:0]        DataAddress,
   input              ReadMem,
   input              WriteMem,
@@ -24,16 +23,11 @@ module data_mem(
     end else 
       DataOut = 'bZ;           // tristate, undriven
 
-  // always_ff @ (posedge CLK)		 // writes are sequential
-    // if(reset) begin
- // you may initialize your memory w/ constants, if you wish
-      // for(int i=0;i<256;i++)
-	    // core[i] <= 0;
-	end
-    else if(WriteMem) begin
+  always_ff @ (posedge CLK)		 // writes are sequential
+    if(WriteMem) begin
       core[DataAddress] <= DataIn;
 // optional diagnostic print statement
-	  $display("Memory write M[%d] = %d",DataAddress,DataIn);
+	    $display("Memory write M[%d] = %d",DataAddress,DataIn);
     end
 
 endmodule

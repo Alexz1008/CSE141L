@@ -51,7 +51,7 @@ initial begin
   #10ns req   = 1'b0;
   wait(ack);                   // wait for ack from DUT
 // generate parity for each message; display result and that of DUT
-  $display("start program 1");
+  $display("finish program 1");
   $display();
   for(int i=0;i<15;i++) begin
     p8 = ^d1_in[i][11:5];
@@ -61,8 +61,10 @@ initial begin
     p16 = ^d1_in[i]^p8^p4^p2^p1;  // overall parity (16th bit)
 // assemble output (data with parity embedded)
     $display("Mem[", i, "]");
-    $displayb ({d1_in[i][11:5],p8,d1_in[i][4:2],p4,d1_in[i][1],p2,p1,p16});
-    $writeb  (DUT.data_mem1.core[31+2*i]);
+    $writeb  (DUT.data_mem1.core[1+2*i], "_");
+    $displayb(DUT.data_mem1.core[2*i]);
+    $displayb ({d1_in[i][11:5],p8}, " ", {d1_in[i][4:2],p4,d1_in[i][1],p2,p1,p16});
+    $writeb  (DUT.data_mem1.core[31+2*i], "_");
     $displayb(DUT.data_mem1.core[30+2*i]);
     $display();
   end
