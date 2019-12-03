@@ -18,7 +18,7 @@ wire [ 7:0] InA, InB, 	   // ALU operand inputs
 wire [ 7:0] regWriteValue, // data in to reg file
             memWriteValue, // data in to data_memory
 	   	   Mem_Out;	      // data out from data_memory
-wire [ 7:0] bOFFSET;       // to program counter: branch offset
+wire [ 8:0] bOFFSET;       // to program counter: branch offset
 wire        MEM_READ,	   // data_memory read enable
 		      MEM_WRITE,	   // data_memory write enable
 			   reg_wr_en,	   // reg_file write enable
