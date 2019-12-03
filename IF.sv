@@ -9,7 +9,7 @@ module IF(
 		  CLK,
 		  bSIGN,
       halt,
-  input [7:0] bOFFSET,
+  input [ 8:0] bOFFSET,
   output logic[ 9:0] PC);
   
 logic start_prog1 = 1;
