@@ -2,7 +2,6 @@
 // program counter
 // accepts branch and jump instructions
 // default = increment by 1
-// issues halt when PC reaches 63
 module IF(
   input init,
 		  branch_en, 
@@ -24,9 +23,11 @@ always @(posedge CLK)
       start_prog1 <= 0;
       start_prog2 <= 1;
     end else if (start_prog2) begin
-      PC <= 2;
-      start_prog1 <= 0;
-      start_prog2 <= 1;
+      PC <= 219;
+      start_prog2 <= 0;
+      start_prog3 <= 1;
+    end else if (start_prog3) begin
+      PC <= 220;
     end
   end else begin
 	 if(branch_en) begin

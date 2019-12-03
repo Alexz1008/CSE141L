@@ -116,11 +116,7 @@ module ALU(
 		       end
 				 
 		kFBT : begin
-		         if (INPUTB[ImmI]) begin
-					  OUT = (8'hfe << ImmI) & INPUTB;
-					end else begin
-					  OUT = (8'h01 << ImmI) | INPUTB;
-					end
+					  OUT = (8'h01 << ImmI) ^ INPUTB;
 		       end
 				 
 		kRST : begin

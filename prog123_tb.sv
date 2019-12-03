@@ -70,7 +70,8 @@ initial begin
   end
 
 // program 2
-// generate parity from random 11-bit messages 
+// generate parity from random 11-bit messages
+  $display("start program 2"); 
   for(int i=0; i<15; i++) begin
 	d2_in[i] = $random;
     p8 = ^d2_in[i][11:5];
@@ -88,9 +89,10 @@ initial begin
   #10ns req   = 0;
   wait(ack);
   $display();
-  $display("start program 2");
+  $display("finish program 2");
   $display();
   for(int i=0; i<15; i++) begin
+    $displayb(d2_bad[i]);
     $displayb({5'b0,d2_in[i]});
     $writeb  (DUT.data_mem1.core[95+2*i]);
     $displayb(DUT.data_mem1.core[94+2*i]);  
