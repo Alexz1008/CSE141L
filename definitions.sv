@@ -15,6 +15,7 @@ package definitions;
 	 const logic [3:0]kENQ  = 4'b1001; // Equals/Not Equals
 	 const logic [3:0]kEQI  = 4'b1010; // Equals/Not Equals Immediate
 	 const logic [3:0]kBRR  = 4'b1011; // Branch Register
+	 const logic [3:0]kFBT  = 4'b1100; // Flip Bit
 	 const logic [3:0]kRST  = 4'b1111; // Reset
 	 
 // enum names will appear in timing diagram
@@ -22,7 +23,7 @@ package definitions;
         ADD, LDS, XOR, BRC,
         GST, LSB, MSB, LRS,
 		  ACC, ENQ, EQI, BRR,
-      A, B, C,
+        FBT, B, C,
 		  RST } op_mne;
 // note: kADD is of type logic[2:0] (3-bit binary)
 //   ADD is of type enum -- equiv., but watch casting

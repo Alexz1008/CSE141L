@@ -114,6 +114,15 @@ module ALU(
 					  bSIGN   = 0;
 					end
 		       end
+				 
+		kFBT : begin
+		         if (INPUTB[ImmI]) begin
+					  OUT = (8'hfe << ImmI) & INPUTB;
+					end else begin
+					  OUT = (8'h01 << ImmI) | INPUTB;
+					end
+		       end
+				 
 		kRST : begin
 		         reset = 1;
 					halt = T;
