@@ -11,7 +11,7 @@ module Ctrl (
   
 // Enable branching if the Instruction operation is a branch.
 always_comb
-  if(Instruction[8:5] == kBRC || Instruction[8:5] == kBRR)
+  if(Instruction[8:5] == kBRC || Instruction[8:5] == kBRR || Instruction[8:5] == kBRO)
     branch_en = 1;
   else
     branch_en = 0;

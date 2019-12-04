@@ -35,13 +35,6 @@ Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 
 Top level modules:
 	TopLevel_tb
 
-} {} {}} C:/Users/Alex/git/CSE141L/prog123_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/Alex/git/CSE141L/prog123_tb.sv
-Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
--- Compiling module prog123_tb
-
-Top level modules:
-	prog123_tb
-
 } {} {}} C:/Users/Alex/git/CSE141L/TopLevel.sv {1 {vlog -work work -sv -stats=none C:/Users/Alex/git/CSE141L/TopLevel.sv
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
 -- Compiling package TopLevel_sv_unit
@@ -50,6 +43,13 @@ Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 
 
 Top level modules:
 	TopLevel
+
+} {} {}} C:/Users/Alex/git/CSE141L/prog123_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/Alex/git/CSE141L/prog123_tb.sv
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module prog123_tb
+
+Top level modules:
+	prog123_tb
 
 } {} {}} C:/Users/Alex/git/CSE141L/definitions.sv {1 {vlog -work work -sv -stats=none C:/Users/Alex/git/CSE141L/definitions.sv
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
@@ -64,15 +64,6 @@ Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 
 
 Top level modules:
 	InstROM
-
-} {} {}} C:/Users/Alex/git/CSE141L/Ctrl.sv {1 {vlog -work work -sv -stats=none C:/Users/Alex/git/CSE141L/Ctrl.sv
-Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
--- Compiling package Ctrl_sv_unit
--- Importing package definitions
--- Compiling module Ctrl
-
-Top level modules:
-	Ctrl
 
 } {} {}} C:/Users/Alex/git/CSE141L/data_mem.sv {1 {vlog -work work -sv -stats=none C:/Users/Alex/git/CSE141L/data_mem.sv
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
