@@ -65,6 +65,8 @@ initial begin
     $displayb ({d1_in[i][11:5],p8}, " ", {d1_in[i][4:2],p4,d1_in[i][1],p2,p1,p16});
     $writeb  (DUT.data_mem1.core[31+2*i], "_");
     $displayb(DUT.data_mem1.core[30+2*i]);
+	  if({d1_in[i][11:5],p8,d1_in[i][4:2],p4,d1_in[i][1],p2,p1,p16} || {DUT.data_mem1.core[31+2*i], DUT.data_mem1.core[30+2*i]})
+        $display("correct!");
     $display();
   end
 
