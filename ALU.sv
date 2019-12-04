@@ -118,6 +118,7 @@ module ALU(
 		kFBT : begin
 					  OUT = (8'h01 << ImmI) ^ INPUTB;
 		       end
+				 
 		kBRO : begin
 		         if (INPUTB == 8'h00) begin
 					  bOFFSET = INPUTA + 255;
@@ -125,6 +126,16 @@ module ALU(
 					end else begin
 					  bOFFSET = {1'b0, 8'h01};
 					  bSIGN   = 0;
+					end
+		       end
+				 
+		kLTE : begin
+		         if (T) begin
+					  if (INPUTA <= INPUTB) OUT = 8'h00;
+					  else OUT = 8'h01;
+					end else begin
+					  if (INPUTA  < INPUTB) OUT = 8'h00;
+					  else OUT = 8'h01;
 					end
 		       end
 		kRST : begin
