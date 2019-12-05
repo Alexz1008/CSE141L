@@ -117,7 +117,7 @@ initial begin
 
 // program 3
 // pattern we are looking for; experiment w/ various values
-  pat = 5'b01010;//5'b10101;//$random;
+  pat = 5'b11111;//5'b10101;//$random;
   str2 = 0;
   DUT.data_mem1.core[160] = pat;
   for(int i=0; i<32; i++) begin
