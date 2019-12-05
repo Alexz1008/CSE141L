@@ -26,9 +26,9 @@ always_comb data_outB = registers[raddrB];                //
 
 // sequential (clocked) writes 
 always_ff @ (posedge CLK) begin
-  if (write_en && ((OP == kGST && T) || (OP == kLRS) || (OP == kLDS))) // If reg write is enabled AND the operation
-    registers[raddrA] <= data_in;                                      // is Get/Set with toggle bit set to 1, the
-  else if (write_en)											                    // operation is L/RShift, OR, op is Load/Store write to rs.
+  if (write_en && ((OP == kGST && T) || (OP == kLRS) || (OP == kLDS))) begin// If reg write is enabled AND the operation
+    registers[raddrA] <= data_in;
+  end else if (write_en)											                    // operation is L/RShift, OR, op is Load/Store write to rs.
     registers[raddrB] <= data_in;                                      // otherwise, write to r0.
   if (reset) begin
     registers[0] <= 0;

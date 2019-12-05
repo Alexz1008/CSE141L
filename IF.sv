@@ -27,7 +27,7 @@ always @(posedge CLK)
       start_prog2 <= 0;
       start_prog3 <= 1;
     end else if (start_prog3) begin
-      PC <= 220;
+      PC <= 686;
     end
   end else begin
 	 if(branch_en) begin
