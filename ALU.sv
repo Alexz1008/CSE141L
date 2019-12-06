@@ -24,6 +24,10 @@ module ALU(
   always_comb begin
     //{SC_OUT, OUT} = 0;            // default -- clear carry out and result out
     {reset, halt} = 0;
+    ZERO = 0;
+    OUT = 0;
+    bOFFSET = 0;
+    bSIGN = 0;
     // single instruction for both LSW & MSW
     case(OP)
       kADD : OUT = INPUTA + INPUTB + T;

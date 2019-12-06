@@ -28,7 +28,6 @@ always_comb data_outB = registers[raddrB];                //
 always_ff @ (posedge CLK) begin
   if (write_en && ((OP == kGST && T) || (OP == kLRS) || (OP == kLDS))) begin// If reg write is enabled AND the operation
     registers[raddrA] <= data_in;
-    if (raddrA == 4) begin $display("Change r4: ", registers[raddrA]); end
   end else if (write_en)											                    // operation is L/RShift, OR, op is Load/Store write to rs.
     registers[raddrB] <= data_in;                                      // otherwise, write to r0.
   if (reset) begin
