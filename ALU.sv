@@ -131,10 +131,10 @@ module ALU(
 				 
 		kLTE : begin
 		         if (T) begin
-					  if (INPUTA <= INPUTB) OUT = 8'h00;
+					  if (INPUTA != 8'h00 && INPUTA <= INPUTB) OUT = 8'h00;
 					  else OUT = 8'h01;
 					end else begin
-					  if (INPUTA  < INPUTB) OUT = 8'h00;
+					  if (INPUTA != 8'h00 && INPUTA  < INPUTB) OUT = 8'h00;
 					  else OUT = 8'h01;
 					end
 		       end
