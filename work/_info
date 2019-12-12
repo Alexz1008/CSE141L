@@ -10,26 +10,26 @@ cModel Technology
 dF:/CSE 141L/CSE141L
 vALU
 Z0 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
-Z1 DXx4 work 11 definitions 0 22 L:UN;8d_e5BzGcAEc_M5h1
-DXx4 work 11 ALU_sv_unit 0 22 cH1eZ[QF<icY30HKkKUa50
+Z1 DXx4 work 11 definitions 0 22 =kRO?i`FQVlEfGo<VHCND3
+DXx4 work 11 ALU_sv_unit 0 22 8:fn^@i8`TDMA`DFzL4lX1
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 r1
 !s85 0
 31
 !i10b 1
 !s100 B?3lVAVBVKjOHCh_1KMQ`2
-I?^:>N`KeamE@l?Y1haaJ^1
+I7@Yg4GW?R1Inoo:[41XN30
 !s105 ALU_sv_unit
 S1
-Z3 dC:/Users/alexz/git/CSE141L
-Z4 w1575669812
-Z5 8C:/Users/alexz/git/CSE141L/ALU.sv
-Z6 FC:/Users/alexz/git/CSE141L/ALU.sv
+Z3 dC:/Users/Alex/git/CSE141L
+Z4 w1576190629
+Z5 8C:/Users/Alex/git/CSE141L/ALU.sv
+Z6 FC:/Users/Alex/git/CSE141L/ALU.sv
 L0 5
 Z7 OP;L;10.4a;61
-Z8 !s108 1575669883.000000
-Z9 !s107 C:/Users/alexz/git/CSE141L/ALU.sv|
-Z10 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/alexz/git/CSE141L/ALU.sv|
+Z8 !s108 1576190665.000000
+Z9 !s107 C:/Users/Alex/git/CSE141L/ALU.sv|
+Z10 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Alex/git/CSE141L/ALU.sv|
 !s101 -O0
 !i113 1
 Z11 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
@@ -37,13 +37,13 @@ n@a@l@u
 XALU_sv_unit
 R0
 R1
-VcH1eZ[QF<icY30HKkKUa50
+V8:fn^@i8`TDMA`DFzL4lX1
 r1
 !s85 0
 31
 !i10b 1
 !s100 USaEAMVVHKgdQ[`[=F_o80
-IcH1eZ[QF<icY30HKkKUa50
+I8:fn^@i8`TDMA`DFzL4lX1
 !i103 1
 S1
 R3
@@ -62,25 +62,25 @@ n@a@l@u_sv_unit
 vCtrl
 R0
 R1
-DXx4 work 12 Ctrl_sv_unit 0 22 4k]>T94I=7G<oCmjPd3JF0
+DXx4 work 12 Ctrl_sv_unit 0 22 2^?MC4b^6RAZ6?n8`cYOY0
 R2
 r1
 !s85 0
 31
 !i10b 1
 !s100 To9TYamT5e>MHB[TPl9l42
-IV_8G4`j=R2g=CZ`GdP4e;3
+I7FOTlBJ`WZX0DT[[GQbL13
 !s105 Ctrl_sv_unit
 S1
 R3
-Z12 w1575582712
-Z13 8C:/Users/alexz/git/CSE141L/Ctrl.sv
-Z14 FC:/Users/alexz/git/CSE141L/Ctrl.sv
+Z12 w1575421876
+Z13 8C:/Users/Alex/git/CSE141L/Ctrl.sv
+Z14 FC:/Users/Alex/git/CSE141L/Ctrl.sv
 L0 6
 R7
-Z15 !s108 1575669884.000000
-Z16 !s107 C:/Users/alexz/git/CSE141L/Ctrl.sv|
-Z17 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/alexz/git/CSE141L/Ctrl.sv|
+R8
+Z15 !s107 C:/Users/Alex/git/CSE141L/Ctrl.sv|
+Z16 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Alex/git/CSE141L/Ctrl.sv|
 !s101 -O0
 !i113 1
 R11
@@ -88,13 +88,13 @@ n@ctrl
 XCtrl_sv_unit
 R0
 R1
-V4k]>T94I=7G<oCmjPd3JF0
+V2^?MC4b^6RAZ6?n8`cYOY0
 r1
 !s85 0
 31
 !i10b 1
 !s100 6>7Q0U_EKNeD=<Peb0?6b0
-I4k]>T94I=7G<oCmjPd3JF0
+I2^?MC4b^6RAZ6?n8`cYOY0
 !i103 1
 S1
 R3
@@ -103,121 +103,121 @@ R13
 R14
 L0 2
 R7
+R8
 R15
 R16
-R17
 !s101 -O0
 !i113 1
 R11
 n@ctrl_sv_unit
 vdata_mem
 R0
-Z18 !s110 1575669884
+Z17 !s110 1576190665
 !i10b 1
 !s100 J0`mk`MgezA<Nbg[CRKDc2
-I`[k^NOSWJFnc6Ebm<C_L51
+I5HT50Ee7V1dMUDoIBfz9;0
 R2
 !s105 data_mem_sv_unit
 S1
 R3
-R12
-8C:/Users/alexz/git/CSE141L/data_mem.sv
-FC:/Users/alexz/git/CSE141L/data_mem.sv
+w1575258900
+8C:/Users/Alex/git/CSE141L/data_mem.sv
+FC:/Users/Alex/git/CSE141L/data_mem.sv
 L0 6
 R7
 r1
 !s85 0
 31
-R15
-!s107 C:/Users/alexz/git/CSE141L/data_mem.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/alexz/git/CSE141L/data_mem.sv|
+R8
+!s107 C:/Users/Alex/git/CSE141L/data_mem.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Alex/git/CSE141L/data_mem.sv|
 !s101 -O0
 !i113 1
 R11
 Xdefinitions
 R0
-R18
+R17
 !i10b 1
 !s100 7E;@F0`lC`cJZ7S:1nG2P1
-IL:UN;8d_e5BzGcAEc_M5h1
-VL:UN;8d_e5BzGcAEc_M5h1
+I=kRO?i`FQVlEfGo<VHCND3
+V=kRO?i`FQVlEfGo<VHCND3
 S1
 R3
-R12
-8C:/Users/alexz/git/CSE141L/definitions.sv
-FC:/Users/alexz/git/CSE141L/definitions.sv
+w1575597050
+8C:/Users/Alex/git/CSE141L/definitions.sv
+FC:/Users/Alex/git/CSE141L/definitions.sv
 L0 3
 R7
 r1
 !s85 0
 31
-R15
-!s107 C:/Users/alexz/git/CSE141L/definitions.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/alexz/git/CSE141L/definitions.sv|
+R8
+!s107 C:/Users/Alex/git/CSE141L/definitions.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Alex/git/CSE141L/definitions.sv|
 !s101 -O0
 !i113 1
 R11
 vIF
 R0
-R18
+R17
 !i10b 1
 !s100 bO`g>15fW@2h>SBU;NYjR3
-IaA@4AX>DfX:d7Kf=ig27h3
+IEjAU2F5>P]c5nR<i173>M2
 R2
 !s105 IF_sv_unit
 S1
 R3
-R12
-8C:/Users/alexz/git/CSE141L/IF.sv
-FC:/Users/alexz/git/CSE141L/IF.sv
+w1575525613
+8C:/Users/Alex/git/CSE141L/IF.sv
+FC:/Users/Alex/git/CSE141L/IF.sv
 L0 5
 R7
 r1
 !s85 0
 31
-R15
-!s107 C:/Users/alexz/git/CSE141L/IF.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/alexz/git/CSE141L/IF.sv|
+R8
+!s107 C:/Users/Alex/git/CSE141L/IF.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Alex/git/CSE141L/IF.sv|
 !s101 -O0
 !i113 1
 R11
 n@i@f
 vInstROM
 R0
-!s110 1575669885
+Z18 !s110 1576190666
 !i10b 1
 !s100 7gzB6z>c8<CM;:]E2::Ad3
-IVbUUX>?@B8SDVCZ<;Sz:H3
+IlZn1O7;P2<A6?PR`CECXV2
 R2
 !s105 InstROM_sv_unit
 S1
 R3
-Z19 w1574901426
-8C:/Users/alexz/git/CSE141L/InstROM.sv
-FC:/Users/alexz/git/CSE141L/InstROM.sv
+Z19 w1574025549
+8C:/Users/Alex/git/CSE141L/InstROM.sv
+FC:/Users/Alex/git/CSE141L/InstROM.sv
 L0 11
 R7
 r1
 !s85 0
 31
-R15
-!s107 C:/Users/alexz/git/CSE141L/InstROM.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/alexz/git/CSE141L/InstROM.sv|
+Z20 !s108 1576190666.000000
+!s107 C:/Users/Alex/git/CSE141L/InstROM.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Alex/git/CSE141L/InstROM.sv|
 !s101 -O0
 !i113 1
 R11
 n@inst@r@o@m
 vLUT
 R0
-R18
+!s110 1575669884
 !i10b 1
 !s100 LIodXU=6g1=o5`iV:?KFA0
 IT_1RV`3YMS:B5FRISdS443
 R2
 !s105 LUT_sv_unit
 S1
-R3
-R19
+dC:/Users/alexz/git/CSE141L
+w1574901426
 8C:/Users/alexz/git/CSE141L/LUT.sv
 FC:/Users/alexz/git/CSE141L/LUT.sv
 L0 4
@@ -225,7 +225,7 @@ R7
 r1
 !s85 0
 31
-R15
+!s108 1575669884.000000
 !s107 C:/Users/alexz/git/CSE141L/LUT.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/alexz/git/CSE141L/LUT.sv|
 !s101 -O0
@@ -237,69 +237,69 @@ R0
 R18
 !i10b 1
 !s100 ]YJ;kP=hB_X`[OMLAOb;F0
-INlE;DE3eNC[Md6HLQFzg;1
+IoH<o3ZMk3iB3SdMGoNUNW0
 R2
 !s105 prog123_tb_sv_unit
 S1
 R3
-w1575669369
-8C:/Users/alexz/git/CSE141L/prog123_tb.sv
-FC:/Users/alexz/git/CSE141L/prog123_tb.sv
+R4
+8C:/Users/Alex/git/CSE141L/prog123_tb.sv
+FC:/Users/Alex/git/CSE141L/prog123_tb.sv
 L0 3
 R7
 r1
 !s85 0
 31
-R15
-!s107 C:/Users/alexz/git/CSE141L/prog123_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/alexz/git/CSE141L/prog123_tb.sv|
+R20
+!s107 C:/Users/Alex/git/CSE141L/prog123_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Alex/git/CSE141L/prog123_tb.sv|
 !s101 -O0
 !i113 1
 R11
 vreg_file
 R0
 R1
-DXx4 work 16 reg_file_sv_unit 0 22 M2QI30PDJnHfL7?mk41J=2
+DXx4 work 16 reg_file_sv_unit 0 22 8o:MGE[8AiMbQjGJB@lOW3
 R2
 r1
 !s85 0
 31
 !i10b 1
 !s100 ^LDhfBNP]@h7TNb0G[OOc0
-I;BGinKBj7ifLkSL374FV?3
+IbG^XefQf=_zP:hH>?Tm_l2
 !s105 reg_file_sv_unit
 S1
 R3
-Z20 w1575669737
-Z21 8C:/Users/alexz/git/CSE141L/reg_file.sv
-Z22 FC:/Users/alexz/git/CSE141L/reg_file.sv
+R4
+Z21 8C:/Users/Alex/git/CSE141L/reg_file.sv
+Z22 FC:/Users/Alex/git/CSE141L/reg_file.sv
 L0 7
 R7
-R15
-Z23 !s107 C:/Users/alexz/git/CSE141L/reg_file.sv|
-Z24 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/alexz/git/CSE141L/reg_file.sv|
+R20
+Z23 !s107 C:/Users/Alex/git/CSE141L/reg_file.sv|
+Z24 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Alex/git/CSE141L/reg_file.sv|
 !s101 -O0
 !i113 1
 R11
 Xreg_file_sv_unit
 R0
 R1
-VM2QI30PDJnHfL7?mk41J=2
+V8o:MGE[8AiMbQjGJB@lOW3
 r1
 !s85 0
 31
 !i10b 1
 !s100 :GMeN?QS@begFF76_U2Bi0
-IM2QI30PDJnHfL7?mk41J=2
+I8o:MGE[8AiMbQjGJB@lOW3
 !i103 1
 S1
 R3
-R20
+R4
 R21
 R22
 L0 6
 R7
-R15
+R20
 R23
 R24
 !s101 -O0
@@ -308,25 +308,25 @@ R11
 vTopLevel
 R0
 R1
-DXx4 work 16 TopLevel_sv_unit 0 22 Gc3bz7j`bmoQgdO_Aamj_1
+DXx4 work 16 TopLevel_sv_unit 0 22 `?RL=MYg3zo52_BPZ7jTn0
 R2
 r1
 !s85 0
 31
 !i10b 1
 !s100 bSH2g_QE=:z^8nk9Y5Vf=1
-Ib<Pc5?`]Y_n661gFHj7:Y1
+IU7OWTZH5;USB[h:o_2PP=1
 !s105 TopLevel_sv_unit
 S1
 R3
-R12
-Z25 8C:/Users/alexz/git/CSE141L/TopLevel.sv
-Z26 FC:/Users/alexz/git/CSE141L/TopLevel.sv
+Z25 w1575358618
+Z26 8C:/Users/Alex/git/CSE141L/TopLevel.sv
+Z27 FC:/Users/Alex/git/CSE141L/TopLevel.sv
 L0 7
 R7
-R15
-Z27 !s107 C:/Users/alexz/git/CSE141L/TopLevel.sv|
-Z28 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/alexz/git/CSE141L/TopLevel.sv|
+R20
+Z28 !s107 C:/Users/Alex/git/CSE141L/TopLevel.sv|
+Z29 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Alex/git/CSE141L/TopLevel.sv|
 !s101 -O0
 !i113 1
 R11
@@ -334,49 +334,49 @@ n@top@level
 XTopLevel_sv_unit
 R0
 R1
-VGc3bz7j`bmoQgdO_Aamj_1
+V`?RL=MYg3zo52_BPZ7jTn0
 r1
 !s85 0
 31
 !i10b 1
 !s100 3MW5MF=;kAUMj4T9Ckoa11
-IGc3bz7j`bmoQgdO_Aamj_1
+I`?RL=MYg3zo52_BPZ7jTn0
 !i103 1
 S1
 R3
-R12
 R25
 R26
+R27
 L0 6
 R7
-R15
-R27
+R20
 R28
+R29
 !s101 -O0
 !i113 1
 R11
 n@top@level_sv_unit
 vTopLevel_tb
 R0
-!s110 1575669883
+R18
 !i10b 1
 !s100 zdNYz`ij:hnBL1N16RPEa2
-IKCOW4zJ>K>F0][mz5fPlT3
+IXd2>M1H`Rh`Ab]=I>c]T=3
 R2
 !s105 TopLevel_tb_sv_unit
 S1
 R3
 R19
-8C:/Users/alexz/git/CSE141L/TopLevel_tb.sv
-FC:/Users/alexz/git/CSE141L/TopLevel_tb.sv
+8C:/Users/Alex/git/CSE141L/TopLevel_tb.sv
+FC:/Users/Alex/git/CSE141L/TopLevel_tb.sv
 L0 8
 R7
 r1
 !s85 0
 31
-R8
-!s107 C:/Users/alexz/git/CSE141L/TopLevel_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/alexz/git/CSE141L/TopLevel_tb.sv|
+R20
+!s107 C:/Users/Alex/git/CSE141L/TopLevel_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Alex/git/CSE141L/TopLevel_tb.sv|
 !s101 -O0
 !i113 1
 R11
